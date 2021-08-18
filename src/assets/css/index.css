@@ -1,0 +1,22 @@
+.background {
+  background-image:url('../img/DarkWall.jpg');  
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
+html {
+  background-image:url('../img/DarkWallWeedNeon4x.jpg');  
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
+.iconDisco {
+  width : 30px;
+  height: 100%;
+}
