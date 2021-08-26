@@ -90,8 +90,11 @@
                   </th>
                 </tr>
               </thead>
-              <tbody class="overflow-y-scroll" style=" height: 50vh;">
-                <tr class="bg-gray-500 bg-opacity-80" v-for="(drug, index) in drugs" :key="index">
+              <tbody>
+                <tr 
+                class="bg-gray-500 bg-opacity-80" 
+                v-for="(drug, index) in drugs" 
+                :key="index">
                   <td
                     class="px-6 py-4 whitespace-nowrap text-sm font-medium text-white"
                   >

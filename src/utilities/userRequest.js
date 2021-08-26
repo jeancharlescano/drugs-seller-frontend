@@ -2,7 +2,7 @@
 
 export const createUser = async (user) => {
   return await axios
-    .post("http://localhost:3000/api/members", user)
+    .post("http://185.163.127.161:3000/api/members", user)
     .then((response) => {
       return response;
     })
@@ -13,7 +13,7 @@ export const createUser = async (user) => {
 
 export const getAllMembers = async () => {
   return await axios
-    .get("http://localhost:3000/api/members")
+    .get("http://185.163.127.161:3000/api/members")
     .then((response) => {
       return response;
     })
@@ -27,7 +27,7 @@ export const getAllMembers = async () => {
 
 export const getIfUserExist = async (user) => {
   return await axios
-    .post("http://localhost:3000/api/auth/login", user)
+    .post("http://185.163.127.161:3000/api/auth/login", user)
     .then((response) => {
       // console.log(
       //   "🚀 ~ file: userRequest.js ~ line 31 ~ .then ~ response",

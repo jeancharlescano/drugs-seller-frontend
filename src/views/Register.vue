@@ -1,6 +1,6 @@
 <template>
   <div>
-        <nav class="px-8 pt-2 shadow-md">
+    <nav class="px-8 pt-2 shadow-md">
       <div class="-mb-px flex justify-center">
         <button
           class="no-underline text-white border-b-2 border-transparent uppercase tracking-wide font-bold text-xs py-3 mr-8"
@@ -57,6 +57,12 @@
             <p class="text-white text-center text-lg font-bold">
               REGISTER
             </p>
+            <span class="mt-2 items-center flex justify-center text-red-500">
+              {{ errorMsg }}
+            </span>
+            <span class="mt-2 items-center flex justify-center text-green-500">
+              {{ doneMsg }}
+            </span>
             <div class="">
               <label class="block text-lg text-white font-bold">Pseudo</label>
               <input
@@ -137,6 +143,8 @@ export default {
         password: "",
         isAdmin: "",
         role:"",
+        errorMsg: "",
+        doneMsg: "",
       },
     };
   },
@@ -163,11 +171,12 @@ export default {
       ) {
         createUser(this.user).then((value) => {
           if (value.data == true) {
-            this.$router.push("/Home");
+            this.doneMsg = "✔️Dealer ajoutée !✔️";
+            // this.$router.push("/Home");
           }
         });
       } else {
-          alert("❌infos incorrect❌")
+          this.errorMsg = "❌Champs incorrect !❌";
       }
     },
 

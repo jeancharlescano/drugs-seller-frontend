@@ -154,14 +154,13 @@ export default {
       this.drug.dateSale = new Date();
       this.drug.idUser = this.userData.id;
 
-      if (
-        this.drug.drugsType == "BHO" ||
-        this.drug.drugsType == "SKUFF" ||
-        this.drug.drugsType == "JOINT" ||
-        (this.drug.drugsType == "SHIT" &&
-          this.drug.quantity != "" &&
-          this.drug.price != "")
-      ) {
+      if ( 
+        this.drug.drugsType == "METH" ||
+        this.drug.drugsType == "COCAINE" &&
+        this.drug.quantity != "" &&
+        this.drug.price != ""
+      )
+         {
 
         this.nowDirtyMoney +=  Number(this.drug.price)
 
