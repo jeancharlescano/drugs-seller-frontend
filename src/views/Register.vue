@@ -173,6 +173,7 @@ export default {
       } else {
           this.msg = "❌Champs incorrect !❌";
       }
+      setTimeout(function(){ this.msg= ""; }, 3000);
     },
 
     goToHome() {
