@@ -58,10 +58,7 @@
               REGISTER
             </p>
             <span class="mt-2 items-center flex justify-center text-red-500">
-              {{ errorMsg }}
-            </span>
-            <span class="mt-2 items-center flex justify-center text-green-500">
-              {{ doneMsg }}
+              {{ msg }}
             </span>
             <div class="">
               <label class="block text-lg text-white font-bold">Pseudo</label>
@@ -143,9 +140,8 @@ export default {
         password: "",
         isAdmin: "",
         role:"",
-        errorMsg: "",
-        doneMsg: "",
       },
+      msg: "",
     };
   },
 
@@ -171,12 +167,11 @@ export default {
       ) {
         createUser(this.user).then((value) => {
           if (value.data == true) {
-            this.doneMsg = "✔️Dealer ajoutée !✔️";
-            // this.$router.push("/Home");
+            this.msg = "✔️Dealer ajoutée !✔️";
           }
         });
       } else {
-          this.errorMsg = "❌Champs incorrect !❌";
+          this.msg = "❌Champs incorrect !❌";
       }
     },
 

@@ -64,7 +64,7 @@
             <span class="mt-2 items-center flex justify-center text-green-500">
               {{ doneMsg }}
             </span>
-            <div class="">
+            <!-- <div class="">
               <label class="block text-lg text-white font-bold"
                 >Drugs Type</label
               >
@@ -76,6 +76,29 @@
                 v-model="drug.drugsType"
                 required
               />
+            </div> -->
+            <div class="flex items-center justify-center mt-2">
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  class="form-radio h-5 w-5"
+                  name="typeOfDrug"
+                  value="Meth"
+                  v-model="drug.drugsType"
+                  required
+                /><span class="ml-2 text-white font-bold">Meth</span>
+              </label>
+
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  class="form-radio h-5 w-5 ml-10"
+                  name="typeOfDrug"
+                  value="Cocaïne"
+                  v-model="drug.drugsType"
+                  required
+                /><span class="ml-2 text-white font-bold">Cocaïne</span>
+              </label>
             </div>
             <div class="mt-3">
               <label class="block text-lg text-white font-bold">Quantity</label>
@@ -154,9 +177,7 @@ export default {
       this.drug.dateSale = new Date();
       this.drug.idUser = this.userData.id;
 
-      if ( 
-        this.drug.drugsType == "METH" ||
-        this.drug.drugsType == "COCAINE" &&
+      if (
         this.drug.quantity != "" &&
         this.drug.price != ""
       )
