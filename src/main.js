@@ -6,6 +6,8 @@ import store from './store';
 import './assets/css/tailwind.css'
 import './assets/css/index.css'
 
+
+
 const app = createApp(App)
 
 // app.component('test', test)

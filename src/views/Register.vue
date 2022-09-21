@@ -44,7 +44,7 @@
           type="button"
           @click="logout"
         >
-          <img class="iconDisco" src="../assets/img/decoIconMini.png"/>
+          <img class="iconDisco" src="../assets/img/decoIconMini.png" />
         </button>
       </div>
     </nav>
@@ -91,7 +91,7 @@
                   value="member"
                   v-model="user.isAdmin"
                   required
-                /><span class="ml-2 text-white font-bold">Member</span>
+                /><span class="ml-2 text-white font-bold">Membre</span>
               </label>
 
               <label class="inline-flex items-center">
@@ -102,11 +102,11 @@
                   value="admin"
                   v-model="user.isAdmin"
                   required
-                /><span class="ml-2 text-white font-bold">Admin</span>
+                /><span class="ml-2 text-white font-bold">Administrateur</span>
               </label>
             </div>
 
-            <div class="mt-4 items-center flex justify-between cursor-pointer">
+            <div class="mt-4 items-center flex justify-center cursor-pointer">
               <button
                 class="px-4 py-1 text-white font-bold tracking-wider bg-gray-900 hover:bg-gray-800 rounded "
                 type="submit"
@@ -114,11 +114,6 @@
               >
                 Submit
               </button>
-              <a
-                class=" inline-block right-0 align-baseline font-bold text-sm text-500 text-white hover:text-red-400 "
-                @click="goToLogin"
-                >Login here</a
-              >
             </div>
           </div>
         </div>
@@ -139,7 +134,7 @@ export default {
         pseudo: "",
         password: "",
         isAdmin: "",
-        role:"",
+        role: "",
       },
       msg: "",
     };
@@ -171,13 +166,18 @@ export default {
           }
         });
       } else {
-          this.msg = "❌Champs incorrect !❌";
+        this.msg = "❌Champs incorrect !❌";
       }
-      setTimeout(function(){ this.msg= ""; }, 3000);
+      setTimeout(
+        function() {
+          this.msg = "";
+        }.bind(this),
+        4000
+      );
     },
 
     goToHome() {
-      this.$router.push("/home")
+      this.$router.push("/home");
     },
 
     goToPersonnalSale() {
@@ -193,8 +193,8 @@ export default {
     },
 
     goToAllMembers() {
-      this.$router.push("/memberList")
-    }
+      this.$router.push("/memberList");
+    },
   },
 
   beforeMount() {

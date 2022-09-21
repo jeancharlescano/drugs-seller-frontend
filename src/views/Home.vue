@@ -45,7 +45,7 @@
           type="button"
           @click="logout"
         >
-          <img class="iconDisco" src="../assets/img/decoIconMini.png"/>
+          <img class="iconDisco" src="../assets/img/decoIconMini.png" />
         </button>
       </div>
     </nav>
@@ -83,10 +83,10 @@
                   type="radio"
                   class="form-radio h-5 w-5"
                   name="typeOfDrug"
-                  value="Meth"
+                  value="Weed"
                   v-model="drug.drugsType"
                   required
-                /><span class="ml-2 text-white font-bold">Meth</span>
+                /><span class="ml-2 text-white font-bold">Weed</span>
               </label>
 
               <label class="inline-flex items-center">
@@ -111,7 +111,7 @@
                 required
               />
             </div>
-            <div class="mt-3">
+            <!-- <div class="mt-3">
               <label class="block text-lg text-white font-bold">Price</label>
               <input
                 class="w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white"
@@ -121,7 +121,7 @@
                 v-model="drug.price"
                 required
               />
-            </div>
+            </div> -->
             <div class="mt-5 items-center flex justify-center cursor-pointer">
               <button
                 class="px-4 py-1 text-white font-bold tracking-wider bg-gray-900 hover:bg-gray-800 rounded "
@@ -140,7 +140,8 @@
 
 <script>
 import { createDrug } from "../utilities/drugRequest.js";
-import { createWallet, getWallet } from "../utilities/walletRequest.js";
+import { getWallet } from "../utilities/walletRequest.js";
+// import { createWallet} from "../utilities/walletRequest.js";
 import { mapGetters } from "vuex";
 
 export default {
@@ -173,24 +174,28 @@ export default {
     },
 
     insertSale() {
-  
       this.drug.dateSale = new Date();
       this.drug.idUser = this.userData.id;
+      this.drug.drugsType === "Weed"
+        ? (this.drug.price = this.drug.quantity * 46)
+        : (this.drug.price = this.drug.quantity * 125);
 
       if (
         this.drug.quantity != "" &&
-        this.drug.price != ""
-      )
-         {
+        this.drug.price != "" &&
+        this.drug.drugsType != ""
+      ) {
+        this.nowDirtyMoney += Number(this.drug.price);
 
-        this.nowDirtyMoney +=  Number(this.drug.price)
-
-        createWallet({dirtyMoney:this.nowDirtyMoney}).then((value) => {
-          console.log("🚀 ~ file: Home.vue ~ line 167 ~ createWallet ~ value", value)
-          if (value.data == true) {
-            console.log("good");
-          }
-        });
+        // createWallet({ dirtyMoney: this.nowDirtyMoney }).then((value) => {
+        //   console.log(
+        //     "🚀 ~ file: Home.vue ~ line 167 ~ createWallet ~ value",
+        //     value
+        //   );
+        //   if (value.data == true) {
+        //     console.log("good");
+        //   }
+        // });
 
         createDrug(this.drug).then((value) => {
           if (value.data == true) {
@@ -199,14 +204,13 @@ export default {
           }
         });
 
-        this.drug= {
-        drugsType: "",
-        quantity: null,
-        price: null,
-        idUser: "",
-        dateSale: "",
-      }
-
+        this.drug = {
+          drugsType: "",
+          quantity: null,
+          price: null,
+          idUser: "",
+          dateSale: "",
+        };
       } else {
         this.errorMsg = "❌Champs incorrect !❌";
         this.doneMsg = "";

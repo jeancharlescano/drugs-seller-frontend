@@ -5,7 +5,7 @@
     >
       <div class="w-full max-w-lg">
         <div class="leading-loose">
-          <div class="mx-4 p-10 bg-white bg-opacity-25 rounded shadow-xl">
+          <div class="mx-4 p-10 bg-white bg-opacity-50 rounded shadow-xl">
             <p class="text-white font-medium text-center text-lg ">
               LOGIN
             </p>
