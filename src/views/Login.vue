@@ -7,7 +7,7 @@
         <div class="leading-loose">
           <div class="mx-4 p-10 bg-white bg-opacity-50 rounded shadow-xl">
             <p class="text-white font-medium text-center text-lg ">
-              LOGIN
+              LOGINE
             </p>
             <p class="text-white -mt-3">
               {{ description }}
