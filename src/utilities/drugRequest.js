@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const createDrug = async (drug) => {
   return await axios
-    .post("http://localhost:3000/api/drugs", drug)
+    .post(`${process.env.VUE_APP_BASE_URL_API}/drugs`, drug)
     .then((response) => {
       return response;
     })
@@ -13,7 +13,7 @@ export const createDrug = async (drug) => {
 
 export const getAllDrug = async () => {
   return await axios
-    .get("http://localhost:3000/api/drugs")
+    .get(`${process.env.VUE_APP_BASE_URL_API}/drugs`)
     .then((response) => {
       return response;
     })
@@ -27,7 +27,7 @@ export const getAllDrug = async () => {
 
 export const getDrugById = async (id) => {
   return await axios
-    .post("http://localhost:3000/api/drugs/persoList", id)
+    .post(`${process.env.VUE_APP_BASE_URL_API}/drugs/persoList`, id)
     .then((response) => {
       return response;
     })

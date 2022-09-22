@@ -1,8 +1,8 @@
- import axios from "axios";
+import axios from "axios";
 
 export const createUser = async (user) => {
   return await axios
-    .post("http://localhost:3000/api/members", user)
+    .post(`${process.env.VUE_APP_BASE_URL_API}/members`, user)
     .then((response) => {
       return response;
     })
@@ -13,7 +13,7 @@ export const createUser = async (user) => {
 
 export const getAllMembers = async () => {
   return await axios
-    .get("http://localhost:3000/api/members")
+    .get(`${process.env.VUE_APP_BASE_URL_API}/members`)
     .then((response) => {
       return response;
     })
@@ -27,7 +27,7 @@ export const getAllMembers = async () => {
 
 export const getIfUserExist = async (user) => {
   return await axios
-    .post("http://localhost:3000/api/auth/login", user)
+    .post(`${process.env.VUE_APP_BASE_URL_API}/auth/login`, user)
     .then((response) => {
       // console.log(
       //   "🚀 ~ file: userRequest.js ~ line 31 ~ .then ~ response",

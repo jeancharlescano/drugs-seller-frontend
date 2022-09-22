@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const createWallet = async (wallet) => {
   return await axios
-    .post("http://localhost:3000/api/wallets", wallet)
+    .post(`${process.env.VUE_APP_BASE_URL_API}/wallets`, wallet)
     .then((response) => {
       return response;
     })
@@ -13,7 +13,7 @@ export const createWallet = async (wallet) => {
 
 export const getWallet = async () => {
   return await axios
-    .get("http://localhost:3000/api/wallets")
+    .get(`${process.env.VUE_APP_BASE_URL_API}/wallets`)
     .then((response) => {
       return response;
     })
