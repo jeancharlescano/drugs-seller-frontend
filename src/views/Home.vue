@@ -105,7 +105,6 @@
               <input
                 class="w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white"
                 type="number"
-                id="quantityDrugs"
                 placeholder="Enter drugs quantity "
                 v-model="drug.quantity"
                 required
@@ -177,7 +176,7 @@ export default {
       this.drug.dateSale = new Date();
       this.drug.idUser = this.userData.id;
       this.drug.drugsType === "Weed"
-        ? (this.drug.price = this.drug.quantity * 46)
+        ? (this.drug.price = this.drug.quantity * 7)
         : (this.drug.price = this.drug.quantity * 125);
 
       if (
@@ -244,7 +243,6 @@ export default {
       this.role = "admin";
     }
 
-    //ici je recupere le prix de base déja présent dans a la table
     await getWallet().then((value) => {
       this.nowDirtyMoney = value.data.dirty_money_wallet;
     });

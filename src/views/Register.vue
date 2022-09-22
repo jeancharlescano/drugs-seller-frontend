@@ -91,7 +91,7 @@
                   value="member"
                   v-model="user.isAdmin"
                   required
-                /><span class="ml-2 text-white font-bold">Membre</span>
+                /><span class="ml-2 text-white font-bold">Member</span>
               </label>
 
               <label class="inline-flex items-center">
@@ -102,7 +102,7 @@
                   value="admin"
                   v-model="user.isAdmin"
                   required
-                /><span class="ml-2 text-white font-bold">Administrateur</span>
+                /><span class="ml-2 text-white font-bold">Admin</span>
               </label>
             </div>
 
